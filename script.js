@@ -3,7 +3,7 @@ const speakButton = document.getElementById('speak');
 const jsonOutput = document.getElementById('json-output');
 
 // --- BACKEND API ENDPOINT ---
-const API_ENDPOINT = 'https://custom-built-speech-synthesis-engin.vercel.app/api/generateProsody'; 
+const API_ENDPOINT = 'https://speech-synthesis-engine.vercel.app/api/generateProsody'; 
 
 speakButton.addEventListener('click', () => {
     const text = speechInput.value.trim();
