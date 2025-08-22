@@ -22,9 +22,11 @@ export default async function handler(req, res) {
   }
 
   // 3. --- DEFINE THE PROMPT FOR GEMINI ---
-  const prompt = `You are a speech director AI. Your task is to take a sentence, break it into expressive segments, and assign speech parameters (pitch, rate, volume) to each segment to make it sound natural and emotional. 
+  const prompt = `You are a speech director AI. Your task is to take input, break it into expressive segments (A segment will be word size only when it is an exclamatory word), and assign speech parameters (pitch, rate, volume) and other parameters you find fit to each segment to make it sound natural and expressive when spoken using text-to-speech synthesis. Your goal is to enhance the expressiveness, emotional tone and clarity of the speech like a real human.
   - The 'pitch' should be between 0.5 and 1.5.
   - The 'rate' should be between 0.8 and 1.2.
+  - The 'volume' should be between 0.5 and 1.0.
+  - Consider punctuation, sentence structure, and emotional tone.
   - Respond ONLY with a valid JSON array of objects, where each object contains a 'segment' and its 'params'.
   Text: "${text}"`;
 
